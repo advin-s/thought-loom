@@ -1,0 +1,26 @@
+<section class="bg-login bg-no-repeat bg-cover vh-100">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-12 col-md-6 col-lg-5">
+                <form class="bg-white rounded-3 py-3 px-3 py-lg-4 px-lg-5 d-flex flex-column gap-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <h5 class="mb-0 text-uppercase d-inline-flex align-items-center gap-2 fw-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-gem" viewBox="0 0 16 16">
+                            <path
+                                d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z" />
+                        </svg>
+                        Thought loom
+                    </h5>
+                    <p class="mb-0 small text-secondary">Continue your blogging journey with thought loom</p>
+                    <div>
+                        <input type="text" class="form-control shadow-none" placeholder="Username" formControlName="username">
+                    </div>
+                    <div>
+                        <input type="text" type="password" class="form-control shadow-none" placeholder="Password" formControlName="password">
+                    </div>
+                    <button class="btn btn-primary text-white" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
