@@ -4,10 +4,11 @@ export interface AuthState{
     user:{
         accessToken:string
     },
-    isLoading:false,
+    isLoading:boolean,
     error:{}
 }
 
-export const selectAuthState = createFeatureSelector<AuthState>('user')
+export const selectAuthState = createFeatureSelector<AuthState>('auth')
 
 export const selectAccessToken = createSelector(selectAuthState, (authState) => authState.user.accessToken)
+export const isLoggingIn = createSelector(selectAuthState, (state) => state.isLoading)

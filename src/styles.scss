@@ -1,12 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/scss/functions';
-@import '../node_modules/bootstrap/scss/mixins';
 @import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
 
-$primary:rgb(6 147 227);
+// $primary:rgb(6 147 227);
 
-$theme-colors:(
-    "primary":$primary
+// $theme-colors:(
+//     "primary":$primary
+// );
+
+$primary: rgb(6, 147, 227);
+$secondary: rgb(108, 117, 125);
+$success: rgb(40, 167, 69);
+$danger: rgb(220, 53, 69);
+$warning: rgb(255, 193, 7);
+$info: rgb(23, 162, 184);
+$light: rgb(248, 249, 250);
+$dark: rgb(52, 58, 64);
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger,
+    "warning": $warning,
+    "info": $info,
+    "light": $light,
+    "dark": $dark
 );
 
+
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+@for $i from 10 through 50 {
+    .h-#{$i}px {
+        height: #{$i}px;
+    }
+
+    .w-#{$i}px {
+        width: #{$i}px;
+    }
+}

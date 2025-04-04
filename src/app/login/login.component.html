@@ -18,7 +18,12 @@
                     <div>
                         <input type="text" type="password" class="form-control shadow-none" placeholder="Password" formControlName="password">
                     </div>
-                    <button class="btn btn-primary text-white" type="submit">Login</button>
+                    <button class="btn btn-primary text-white d-flex align-items-center justify-content-center gap-2" type="submit">Login
+                        @if(isLoggingIn | async){
+                            <div class="spinner-border h-20px w-20px fs-6" role="status">
+                            </div>
+                        }
+                    </button>
                 </form>
             </div>
         </div>
