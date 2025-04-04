@@ -40,4 +40,8 @@ $theme-colors: (
     .w-#{$i}px {
         width: #{$i}px;
     }
+
+    .fs-#{$i}px{
+        font-size: #{$i}px;
+    }
 }
