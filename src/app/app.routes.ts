@@ -9,6 +9,12 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
+        path:'account',
+        loadComponent:()=>import('./account/account.component').then(c => c.AccountComponent),
+        title:"Account",
+        canActivate:[isAuthenticated]
+    },
+    {
         path:'posts',
         loadComponent:()=> import('../app/posts/posts.component').then(c => c.PostsComponent),
         canMatch:[isAuthenticated],
