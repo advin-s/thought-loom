@@ -32,7 +32,7 @@ $theme-colors: (
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-@for $i from 10 through 50 {
+@for $i from 10 through 70 {
     .h-#{$i}px {
         height: #{$i}px;
     }

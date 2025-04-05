@@ -22,7 +22,7 @@ export class AuthEffects {
             if (res) {
               const responseString = JSON.stringify(res);
               localStorage.setItem("userToken", responseString);
-              this.router.navigate(['/posts'],{replaceUrl:true})
+              this.router.navigate(['/dashboard'],{replaceUrl:true})
             }
           })
         )
