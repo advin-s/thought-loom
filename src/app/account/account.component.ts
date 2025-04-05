@@ -17,7 +17,8 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.store$.select(selectUser).subscribe({
-      next:(user:AuthSuccess) => this.user = user,
+      next:(user:AuthSuccess) => {this.user = user; console.log(user)
+      },
       error:(err) => console.error(err)
     })
   }
