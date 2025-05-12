@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
 import { AuthSuccess } from '../interface';
 import { Store } from '@ngrx/store';
 import { selectUser } from '../store/auth/auth.selector';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-account',
-  imports: [HeaderComponent],
+  imports: [ RouterLink],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss'
 })

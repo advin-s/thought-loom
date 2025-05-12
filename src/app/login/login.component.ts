@@ -5,6 +5,7 @@ import { login } from '../store/auth/auth.actions';
 import { Observable } from 'rxjs';
 import { isLoggingIn } from '../store/auth/auth.selector';
 import { AsyncPipe } from '@angular/common';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   public loginForm!:FormGroup
   private store$ = inject(Store)
+  private loginService = inject(LoginService)
   public isLoggingIn:Observable<boolean> = this.store$.select(isLoggingIn)
 
   ngOnInit(): void {
@@ -23,11 +25,13 @@ export class LoginComponent implements OnInit {
       username: new FormControl('',[Validators.required]),
       password: new FormControl('', [Validators.required])
     })
+    this.loginService.onAutoLogin().subscribe()
   }
 
   onSubmit(){
     if(this.loginForm.invalid) return
     this.store$.dispatch(login(this.loginForm.value))
   }
+
 
 }

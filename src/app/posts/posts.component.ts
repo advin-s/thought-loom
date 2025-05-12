@@ -6,10 +6,11 @@ import { HeaderComponent } from "../header/header.component";
 import { Store } from "@ngrx/store";
 import { getPosts } from "../store/posts/posts.actions";
 import { selectPosts } from "../store/posts/posts.selector";
+import { PostsSearchBarComponent } from "./posts-search-bar/posts-search-bar.component";
 
 @Component({
   selector: "app-posts",
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, PostsSearchBarComponent],
   templateUrl: "./posts.component.html",
   styleUrl: "./posts.component.scss",
 })
@@ -24,7 +25,7 @@ export class PostsComponent implements OnInit {
     // })   
     
     this.store$.dispatch(getPosts({skip:0})) 
-    this.store$.select(selectPosts).subscribe(res => console.log(res)
+    this.store$.select(selectPosts).subscribe(res => {this.posts = res; console.log(res);}
     )
     
   }
